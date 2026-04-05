@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Source Serif 4", ui-serif, Georgia, serif;
+  --color-tea-deep: #1a2f24;
+  --color-tea-moss: #2d4a3a;
+  --color-tea-steam: #e8e4dc;
+  --color-tea-gold: #c9a227;
+  --color-tea-clay: #8b5a3c;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply m-0 min-h-dvh bg-tea-deep text-tea-steam font-body;
+  }
+}
