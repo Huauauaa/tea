@@ -1,17 +1,5 @@
-export type TeaCategory = {
-  /** URL segment, e.g. green-tea */
-  slug: string;
-  name: string;
-  nameZh: string;
-  blurb: string;
-  blurbEn: string;
-  imageSrc?: string;
-  imageAlt: string;
-  imageAltZh: string;
-};
-
 /** Six main types + Other; carousel uses entries that have imageSrc */
-export const TEA_CATEGORIES: TeaCategory[] = [
+export const TEA_CATEGORIES: Tea.Category[] = [
   {
     slug: "green-tea",
     name: "Green Tea",
@@ -102,6 +90,6 @@ export const CAROUSEL_SLIDES = TEA_CATEGORIES.filter((c) => c.imageSrc);
 
 const bySlug = new Map(TEA_CATEGORIES.map((c) => [c.slug, c]));
 
-export function getCategoryBySlug(slug: string): TeaCategory | undefined {
+export function getCategoryBySlug(slug: string): Tea.Category | undefined {
   return bySlug.get(slug);
 }

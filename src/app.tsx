@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
-import { SiteHeader } from "./components/SiteHeader";
-import { I18nProvider, useI18n } from "./i18n/I18nContext";
-import { HomePage } from "./pages/HomePage";
-import { OtherPage } from "./pages/OtherPage";
-import { TeaCategoryPage } from "./pages/TeaCategoryPage";
+import { SiteHeader } from "./components/site-header";
+import { I18nProvider, useI18n } from "./i18n/i18n-context";
+import { HomePage } from "./pages/home-page";
+import { OtherPage } from "./pages/other-page";
+import { TeaCategoryPage } from "./pages/tea-category-page";
 import { AppLink, RouteProvider, useRoute } from "./routing";
 
 function Shell() {

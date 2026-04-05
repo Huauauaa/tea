@@ -1,4 +1,4 @@
-import { TeaCarousel } from "../components/TeaCarousel";
+import { TeaCarousel } from "../components/tea-carousel";
 
 export function HomePage() {
   return (

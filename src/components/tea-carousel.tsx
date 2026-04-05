@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
-import { CAROUSEL_SLIDES } from "../data/teaCategories";
-import { useI18n } from "../i18n/I18nContext";
+import { CAROUSEL_SLIDES } from "../data/tea-categories";
+import { useI18n } from "../i18n/i18n-context";
 import {
   teaBlurb,
   teaImageAlt,
   teaNavLabel,
   teaPrimaryName,
   teaSecondaryName,
-} from "../i18n/teaLabels";
+} from "../i18n/tea-labels";
 import { AppLink } from "../routing";
 
 const INTERVAL_MS = 5500;

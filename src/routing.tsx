@@ -7,14 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-
-type RouteContextValue = {
-  /** Normalized app path: `/` or `/green-tea` etc. */
-  path: string;
-  navigate: (to: string) => void;
-};
-
-const RouteContext = createContext<RouteContextValue | null>(null);
+const RouteContext = createContext<Routing.ContextValue | null>(null);
 
 function getBasePath(): string {
   const b = import.meta.env.BASE_URL;
@@ -76,7 +69,7 @@ export function RouteProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useRoute(): RouteContextValue {
+export function useRoute(): Routing.ContextValue {
   const ctx = useContext(RouteContext);
   if (!ctx) {
     throw new Error("useRoute must be used within RouteProvider");

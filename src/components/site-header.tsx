@@ -1,8 +1,8 @@
-import { TEA_CATEGORIES } from "../data/teaCategories";
-import { useI18n } from "../i18n/I18nContext";
-import { teaNavLabel } from "../i18n/teaLabels";
+import { TEA_CATEGORIES } from "../data/tea-categories";
+import { useI18n } from "../i18n/i18n-context";
+import { teaNavLabel } from "../i18n/tea-labels";
 import { AppLink } from "../routing";
-import { LocaleSwitcher } from "./LocaleSwitcher";
+import { LocaleSwitcher } from "./locale-switcher";
 
 export function SiteHeader() {
   const { locale, t } = useI18n();

@@ -9,27 +9,19 @@ import {
 } from "react";
 import {
   DEFAULT_LOCALE,
-  type Locale,
-  type MessageKey,
   messages,
   readStoredLocale,
   writeStoredLocale,
 } from "./strings";
 
-type I18nContextValue = {
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
-  t: (key: MessageKey) => string;
-};
-
-const I18nContext = createContext<I18nContextValue | null>(null);
+const I18nContext = createContext<I18n.ProviderContextValue | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
+  const [locale, setLocaleState] = useState<I18n.Locale>(() => {
     return readStoredLocale() ?? DEFAULT_LOCALE;
   });
 
-  const setLocale = useCallback((next: Locale) => {
+  const setLocale = useCallback((next: I18n.Locale) => {
     setLocaleState(next);
     writeStoredLocale(next);
   }, []);
@@ -40,7 +32,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [locale]);
 
   const t = useCallback(
-    (key: MessageKey) => messages[locale][key],
+    (key: I18n.MessageKey) => messages[locale][key],
     [locale],
   );
 
@@ -54,7 +46,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useI18n(): I18nContextValue {
+export function useI18n(): I18n.ProviderContextValue {
   const ctx = useContext(I18nContext);
   if (!ctx) {
     throw new Error("useI18n must be used within I18nProvider");

@@ -1,4 +1,4 @@
-import { useI18n } from "../i18n/I18nContext";
+import { useI18n } from "../i18n/i18n-context";
 
 /**
  * Overlapping “En” + “中” tiles (language toggle), styled for the tea palette.

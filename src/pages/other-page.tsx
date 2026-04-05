@@ -1,27 +1,24 @@
-import type { TeaCategory } from "../data/teaCategories";
-import { getCategoryBySlug } from "../data/teaCategories";
+import { getCategoryBySlug } from "../data/tea-categories";
 import {
   OTHER_SECTIONS,
   getOtherSubBySlug,
   subsForSection,
-  type OtherSubcategory,
-} from "../data/otherTea";
-import { useI18n } from "../i18n/I18nContext";
-import type { Locale } from "../i18n/strings";
+} from "../data/other-tea";
+import { useI18n } from "../i18n/i18n-context";
 import {
   teaBlurb,
   teaPrimaryName,
   teaSecondaryName,
-} from "../i18n/teaLabels";
+} from "../i18n/tea-labels";
 import { AppLink, useRoute } from "../routing";
 
-function subLabel(s: OtherSubcategory, locale: Locale): string {
+function subLabel(s: OtherTea.Subcategory, locale: I18n.Locale): string {
   return locale === "zh" ? s.nameZh : s.nameEn;
 }
 
 function sectionTitle(
-  id: (typeof OTHER_SECTIONS)[0]["id"],
-  locale: Locale,
+  id: OtherTea.SectionId,
+  locale: I18n.Locale,
 ): string {
   const sec = OTHER_SECTIONS.find((x) => x.id === id)!;
   return locale === "zh" ? sec.titleZh : sec.titleEn;
@@ -71,7 +68,7 @@ export function OtherPage() {
     );
   }
 
-  const category = getCategoryBySlug("other") as TeaCategory;
+  const category = getCategoryBySlug("other") as Tea.Category;
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-10 lg:flex-row lg:items-start lg:gap-10 lg:py-14">
@@ -139,8 +136,8 @@ function OtherOverview({
   category,
   locale,
 }: {
-  category: TeaCategory;
-  locale: Locale;
+  category: Tea.Category;
+  locale: I18n.Locale;
 }) {
   return (
     <article>
@@ -165,7 +162,7 @@ function OtherOverview({
   );
 }
 
-function OtherSubDetail({ sub }: { sub: OtherSubcategory }) {
+function OtherSubDetail({ sub }: { sub: OtherTea.Subcategory }) {
   const { locale, t } = useI18n();
 
   return (

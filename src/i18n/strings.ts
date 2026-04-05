@@ -1,10 +1,8 @@
-export type Locale = "zh" | "en";
-
-export const DEFAULT_LOCALE: Locale = "zh";
+export const DEFAULT_LOCALE: I18n.Locale = "zh";
 
 const STORAGE_KEY = "tea-locale";
 
-export function readStoredLocale(): Locale | null {
+export function readStoredLocale(): I18n.Locale | null {
   try {
     const s = localStorage.getItem(STORAGE_KEY);
     if (s === "zh" || s === "en") return s;
@@ -14,7 +12,7 @@ export function readStoredLocale(): Locale | null {
   return null;
 }
 
-export function writeStoredLocale(locale: Locale) {
+export function writeStoredLocale(locale: I18n.Locale) {
   try {
     localStorage.setItem(STORAGE_KEY, locale);
   } catch {
@@ -67,6 +65,4 @@ export const messages = {
     otherBackToSection: "Back to Other",
     otherDetailBack: "← Back to Other overview",
   },
-} as const;
-
-export type MessageKey = keyof typeof messages.zh;
+} as const satisfies Record<I18n.Locale, Record<I18n.MessageKey, string>>;

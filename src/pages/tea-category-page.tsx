@@ -1,11 +1,11 @@
-import { getCategoryBySlug } from "../data/teaCategories";
-import { useI18n } from "../i18n/I18nContext";
+import { getCategoryBySlug } from "../data/tea-categories";
+import { useI18n } from "../i18n/i18n-context";
 import {
   teaBlurb,
   teaImageAlt,
   teaPrimaryName,
   teaSecondaryName,
-} from "../i18n/teaLabels";
+} from "../i18n/tea-labels";
 import { AppLink } from "../routing";
 
 type Props = { slug: string };

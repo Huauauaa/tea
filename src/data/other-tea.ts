@@ -1,23 +1,4 @@
-export type OtherSectionId = "reprocessed" | "substitute";
-
-export type OtherSection = {
-  id: OtherSectionId;
-  titleZh: string;
-  titleEn: string;
-};
-
-export type OtherSubcategory = {
-  slug: string;
-  sectionId: OtherSectionId;
-  nameZh: string;
-  nameEn: string;
-  blurbZh: string;
-  blurbEn: string;
-  examplesZh: string;
-  examplesEn: string;
-};
-
-export const OTHER_SECTIONS: OtherSection[] = [
+export const OTHER_SECTIONS: OtherTea.Section[] = [
   {
     id: "reprocessed",
     titleZh: "再加工茶",
@@ -30,7 +11,7 @@ export const OTHER_SECTIONS: OtherSection[] = [
   },
 ];
 
-export const OTHER_SUBCATEGORIES: OtherSubcategory[] = [
+export const OTHER_SUBCATEGORIES: OtherTea.Subcategory[] = [
   {
     slug: "scented-tea",
     sectionId: "reprocessed",
@@ -123,7 +104,7 @@ export const OTHER_SUBCATEGORIES: OtherSubcategory[] = [
 
 const bySlug = new Map(OTHER_SUBCATEGORIES.map((s) => [s.slug, s]));
 
-export function getOtherSubBySlug(slug: string): OtherSubcategory | undefined {
+export function getOtherSubBySlug(slug: string): OtherTea.Subcategory | undefined {
   return bySlug.get(slug);
 }
 
@@ -131,6 +112,6 @@ export function isValidOtherSubSlug(slug: string): boolean {
   return bySlug.has(slug);
 }
 
-export function subsForSection(id: OtherSectionId): OtherSubcategory[] {
+export function subsForSection(id: OtherTea.SectionId): OtherTea.Subcategory[] {
   return OTHER_SUBCATEGORIES.filter((s) => s.sectionId === id);
 }
