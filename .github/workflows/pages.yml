@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 读取 Environment「github-pages」下的 Variables（同名 Secrets 则改用 ${{ secrets.… }}）
+    environment:
+      name: github-pages
     steps:
       - uses: actions/checkout@v4
 
@@ -40,6 +43,8 @@ jobs:
         env:
           GITHUB_ACTIONS: "true"
           GITHUB_REPOSITORY: ${{ github.repository }}
+          VITE_AMAP_KEY: ${{ vars.AMAP_KEY }}
+          VITE_AMAP_SECURITY_JS_CODE: ${{ vars.AMAP_SECURITY_JS_CODE }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,3 +1,4 @@
+import { GreenTeaChinaMap } from "../components/green-tea-china-map";
 import { getCategoryBySlug } from "../data/tea-categories";
 import { useI18n } from "../i18n/i18n-context";
 import {
@@ -30,6 +31,20 @@ export function TeaCategoryPage({ slug }: Props) {
           {t("backHome")}
         </AppLink>
       </div>
+    );
+  }
+
+  if (slug === "green-tea") {
+    return (
+      <article className="mx-auto max-w-4xl px-6 py-10 md:py-14">
+        <GreenTeaChinaMap />
+        <AppLink
+          to="/"
+          className="mt-10 inline-block font-body text-tea-gold underline-offset-4 hover:underline"
+        >
+          {t("backHomeArrow")}
+        </AppLink>
+      </article>
     );
   }
 

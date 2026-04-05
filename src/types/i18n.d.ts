@@ -22,7 +22,12 @@ declare namespace I18n {
     | "siteBrand"
     | "otherOverviewLink"
     | "otherBackToSection"
-    | "otherDetailBack";
+    | "otherDetailBack"
+    | "greenTeaMapTitle"
+    | "greenTeaMapNote"
+    | "greenTeaMapAria"
+    | "greenTeaMapAmapHint"
+    | "greenTeaMapAmapError";
 
   type ProviderContextValue = {
     locale: Locale;
