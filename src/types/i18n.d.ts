@@ -27,7 +27,9 @@ declare namespace I18n {
     | "greenTeaMapNote"
     | "greenTeaMapAria"
     | "greenTeaMapAmapHint"
-    | "greenTeaMapAmapError";
+    | "greenTeaMapAmapError"
+    | "oolongProcessTitle"
+    | "oolongProcessNote";
 
   type ProviderContextValue = {
     locale: Locale;

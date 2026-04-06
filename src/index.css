@@ -10,6 +10,25 @@
   --color-tea-clay: #8b5a3c;
 }
 
+@keyframes oolong-step-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oolong-flow-step {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @layer base {
   html {
     @apply antialiased;

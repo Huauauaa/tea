@@ -50,6 +50,9 @@ export const messages = {
       "未配置高德 Key：当前为示意地图。请在项目根目录创建 .env.local，设置 VITE_AMAP_KEY 与 VITE_AMAP_SECURITY_JS_CODE（高德开放平台）。",
     greenTeaMapAmapError:
       "高德地图加载失败，已切换为示意地图。请确认安全密钥与 Key 匹配，并在控制台将当前页面域名（含 localhost）加入 Web 端 Key 的「域名白名单」；开发环境下可打开浏览器控制台查看 [Amap] 报错。",
+    oolongProcessTitle: "乌龙茶加工工艺流程（示意）",
+    oolongProcessNote:
+      "以下为常见工序顺序；具体参数与是否包揉、焙火程度等因产地、品种（条形乌龙、球形乌龙等）而异。",
   },
   en: {
     navAria: "Tea categories",
@@ -80,5 +83,8 @@ export const messages = {
       "Amap keys not set: showing schematic map. Add VITE_AMAP_KEY and VITE_AMAP_SECURITY_JS_CODE in .env.local (Amap Open Platform).",
     greenTeaMapAmapError:
       "Amap failed to load; showing schematic map instead. Check security code matches the key, whitelist your domain (including localhost) for the Web JS key, and see the browser console for [Amap] warnings in dev.",
+    oolongProcessTitle: "Oolong processing (schematic flow)",
+    oolongProcessNote:
+      "Typical step order; timing, wrapping/ball-shaping, and roast level vary by origin and style.",
   },
 } as const satisfies Record<I18n.Locale, Record<I18n.MessageKey, string>>;
